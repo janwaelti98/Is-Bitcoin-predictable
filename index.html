@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>ivis-Projekt</title>
+
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+<div id="index-banner" class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+        <div class="container white-text">
+            <h1 class="header center">Is Bitcoin predictable?</h1>
+            <div class="row center">
+                <h5 class="header col s12 light">An attempt focused on tweets</h5>
+            </div>
+        </div>
+        <div class="center-align scroll-further white-text">
+            <h5>Auf geht’s!</h5>
+            <i class="small material-icons bounce">expand_more</i>
+        </div>
+    </div>
+    <div class="parallax"><img src="resources/images/headerBackground.jpg" alt="Header background iStock image"></div>
+</div>
+
+<div id="introduction_section" class="parallax-container">
+    <div class="container white-text">
+        <div class="section">
+            <div class="row">
+                <div class="col s12 center">
+                    <h3><i class="mdi-content-send"></i></h3>
+                    <h4 id="introduction_header">Einleitung</h4>
+                    <p class="left-align light">
+                        Bitcoin, sowie Kryptowährungen im Allgemeinen sind schon seit einiger Zeit in aller Munde. Nicht
+                        zuletzt durch schrille Persönlichkeiten wie Elon Musk, welcher sich bereits mehrmals auf Twitter
+                        zu diesem Thema äusserte, rückte dieses Thema weiter in Fokus der breiten Öffentlichkeit.
+                    </p>
+
+                    <p class="left-align light">
+                        Vielleicht hast Du dich deshalb auch schon gefragt, ob diese Tweets dabei einen Einfluss auf den
+                        weiteren Kursverlauf von Bitcoin haben. Elon Musk und Co. scheinen ja schon einen grossen
+                        Einfluss auf dieses Thema zu haben. Wir haben uns deswegen zum Ziel gesetzt herauszufinden, ob
+                        Tweets zum Thema Bitcoin irgendeinen Einfluss auf dessen Kurs haben, und ob man eine
+                        Abhängigkeit zwischen den Tweets zum Thema Bitcoin und dem Bitcoin - Kurs erkennen kann.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="bar_plot_top_tweeters_section" class="parallax-container">
+    <div class="container white-text">
+        <div class="section">
+            <div class="row">
+                <div class="col s12 center">
+                    <h3><i class="mdi-content-send"></i></h3>
+                    <h4 id="bar_plot_top_tweeters_header">Top Tweeters</h4>
+                    <p class="left-align light">In einem ersten Schritt versuchten wir herauszufinden welche Twitter –
+                        Accounts jeweils die meisten Tweets zum Thema Bitcoin schreiben. Um so einen ersten Anhaltspunkt
+                        zu bekommen, welche Accounts bzw. welche Personen potenziell am ehesten einen Einfluss auf den
+                        Bitcoin Kurs haben könnten. Wir haben dafür die Tweets über einen Zeitraum von 13 Monaten
+                        untersucht, welche jeweils den Hashtag #btc oder #bitcoin enthalten.
+                    </p>
+                    <p class="left-align light">
+                        Interessant zu beobachten war, dass wenn man die Follower Anzahl des Accounts ausser acht lässt,
+                        die meisten Tweets von sogenannten Bots kommen. «Hoba Bot» war dabei der Account, welcher am
+                        meisten tweetete. Dabei handelt es sich um einen Account, welcher mehrmals pro Tag automatisch
+                        die Kursänderungen twittert. Ein Grossteil davon wurde allerdings wieder gelöscht.
+                    </p>
+                    <p class="left-align light">
+                        Wir merkten so relativ schnell, dass die Anzahl Tweets alleine, nicht reicht die
+                        einflussreichsten Accounts zu finden, da diese Bots zum Teil nur einige Tausende Follower haben
+                        und somit keine allzu grosse Reichweite besitzen. Bezieht man zusätzlich die Anzahl Follower mit
+                        ein, und schaut sich dort die Accounts mit den meisten Tweets an ergibt sich ein anderes Bild.
+                        Zu den somit einflussreichsten zählt der Account von Bitcoin selbst und der Account der
+                        Hackergruppe Anonymous. Das war auch für uns etwas überraschend.
+                    </p>
+                    <p class="left-align light">
+                        Was wir zudem aus den Daten rauslesen konnten, ist, dass rund die Hälfte aller Twitter User,
+                        welche über das Thema Bitcoin twittern dies nur ein einziges Mal tun.
+                    </p>
+                    <div id="amount_of_follower_row" class="row">
+                        <h5>Anzahl Follower</h5>
+                        <div id="inputFieldContainer">
+                            <div id="inputFieldFrom">
+                                <div class="input-field inline"><input id="followerInputFrom" type="number" min="1"
+                                                                       max="25000000" value="4000000" step="100000"
+                                                                       class="white-text"></div>
+                                <label for="followerInputFrom" class="white-text">von</label>
+                            </div>
+                            <div id="inputFieldTo">
+                                <div class="input-field inline"><input id="followerInputTo" type="number" min="1"
+                                                                       max="25000000" value="24500000" step="100000"
+                                                                       class="white-text"></div>
+                                <label for="followerInputTo" class="white-text">bis</label>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn waves-effect waves-light orange lighten-2" type="submit"
+                                    name="action"
+                                    id="submit">Suche
+                                <i class="material-icons right">search</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="bar_plot_top_tweeters"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div id="bubble_plot_hashtags_section" class="parallax-container">
+    <div class="container">
+        <div class="section">
+            <div id="bubble_plot_hashtags_row" class="row">
+                <div class="col s12 m12 l6 center-align">
+                    <h3><i class="mdi-content-send brown-text"></i></h3>
+                    <h4 id="bubble_plot_hashtags_header">Beliebteste Hashtags</h4>
+                    <p class="left-align light">Neben den einflussreichsten Twitter Account, wollten wir auch
+                        herausfinden, welche Hashtags neben #btc und #bitcoin in den gleichen Tweets verwendet werden.
+                        So könnten wir etwaige Verbindungen zu anderen Themenbereichen aufdecken, welche oft in
+                        Verbindung zum Thema Bitcoin stehen und gegebenenfalls auch einen Einfluss haben.</p>
+
+                    <p class="left-align light">Die meistverwendeten Hashtags haben wir hier zusammengetragen. Die dabei
+                        gewonnenen Erkenntnisse sind allerdings eher ernüchternd. An den ersten Stellen befinden sich
+                        mit grossem Abstand #bitcoin, #btc , was zu erwarten war. Danach kommen verschiedenste Hashtags
+                        zu anderen Kryptowährungen wie Ethereum oder Dogecoin. Auch relativ oft wurden allgemeine
+                        Begriffe zum Thema Kryptowährungen verwendet, wie #crypto oder #cryptocurrency. Insgesamt gab es
+                        etwas über 140'000 verschiedene Hashtags, welche im Zusammenhang mit dem #bitcoin verwendet
+                        wurden.</p>
+                    <h5 id="bubble_plot_legend_title">Anzahl Tweets</h5>
+                    <div id="bubble_plot_legend"></div>
+                </div>
+                <div id="bubble_plot_hashtags" class="col s12 m12 l6"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="line_plot_bitcoin_price_section" class="parallax-container">
+    <div class="container white-text">
+        <div class="section">
+            <div class="row">
+                <div class="col s12 center">
+                    <h3><i class="mdi-content-send brown-text"></i></h3>
+                    <h4 id="line_plot_bitcoin_price_header">Bitcoin Kurs</h4>
+                    <p class="left-align light">In einem weiteren Schritt möchten wir untersuchen ob die Anzahl Tweets
+                        zum Thema Bitcoin mit dessen Kurs korreliert. Werden mehr Tweets verschickt, wenn
+                        der Kurs gerade eingebrochen ist, beziehungsweise starken Schwankungen unterliegt?</p>
+                    <p class="left-align light">Man erkennt, dass im Zeitraum von März bis etwa Juni des letzten Jahres,
+                        relativ wenig Tweets zum Thema Bitcoin versendet werden. Obwohl der Kurs verglichen zum
+                        vorherigen Zeitraum stark anstieg. Als dann der Kurs gegen Ende Mai 2021 stark fällt, schlägt
+                        sich das zuerst nicht auf die Anzahl Tweets aus. Erst etwa einen Monat später werden deutlich
+                        mehr Tweets versendet.</p>
+                    <p class="left-align light">Rein aus dieser Beobachtung lässt sich schliessen, dass der Bitcoin Kurs
+                        <strong>keinen</strong> Einfluss auf die Anzahl Tweets hat. Dass sich der Bitcoin Kurs gar durch
+                        die Menge an
+                        Tweets beeinflussen lässt, ist deshalb nicht gegeben.</p>
+
+                    <div id="line_plot_bitcoin_price"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="line_plot_sentiment_section" class="parallax-container">
+    <div class="container white-text">
+        <div class="section">
+            <div class="row">
+                <div class="col s12 center">
+                    <h4 id="line_plot_sentiment_header">Stimmung auf Twitter</h4>
+                    <p class="left-align light">Um herauszufinden, ob die Stimmung von Tweets zum Thema Bitcoin einen
+                        Einfluss auf dessen Kursverlauf hat, haben wir mithilfe von NLP (Natural Language Processing)
+                        die Stimmung einzelner Tweets ermittelt. Dies setzten wir anschliessend in Relation zur
+                        Kursdifferenz des Bitcoins. So können wir feststellen, ob sich der Bitcoin Kurs durch die
+                        Stimmung auf Twitter beeinflussen lässt.</p>
+                    <h5>Stimmungsbarometer</h5>
+                    <div id="sentiment_barometer"></div>
+                    <p class="left-align light">
+                        Da wir die Stimmung (engl. Sentiment) eines Tweets nicht zur Verfügung hatten, ermittelten wir
+                        dies selbst. Jeder Tweet wurde mit einem NLP Verfahren analysiert, um herauszufinden,
+                        ob es sich dabei um einen eher positiven oder negativen Tweet zum Thema Bitcoin handelt. Danach
+                        wurden diese auf einer Skala von -4 bis +4 bewertet. Das Stimmungsbarometer zeigt
+                        nun die durchschnittliche Stimmung aller Tweets, welche an einem bestimmten Tag versendet
+                        wurden.
+                    </p>
+                    <p class="left-align light">
+                        Wie man im untenstehenden Graphen erkennen kann, ist die Streuung doch sehr hoch und man erkennt
+                        <strong>keinen</strong> Zusammenhang zwischen Kursveränderungen und der Tagesstimmung auf
+                        Twitter. Was man
+                        allerdings sieht, ist, dass sich alle Sentiments im positiven Bereich bewegen. Es gibt somit,
+                        auf einen Tag gesehen, also kein negatives Stimmungsbild auf Twitter zu Bitcoin.
+                    </p>
+                    <div id="line_plot_sentiment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="conclusion_section" class="parallax-container">
+    <div class="container white-text">
+        <div class="section">
+            <div class="row">
+                <div class="col s12 center">
+                    <h4 id="conclusion_header">Fazit</h4>
+                    <p class="left-align light">
+                        Um die eingangs gestellte Frage nochmals aufzugreifen: «Is Bitcoin predictable?». Wir können,
+                        zumindest
+                        mit denen von uns angewandten Methoden und Daten, dies mit einem ganz klaren «Nein» beantworten.
+                        Wir haben keinerlei Hinweise gefunden, welche auf solche eine beeinflussende Wirkung schliessen
+                        lässt. Auch wenn es uns manchmal so erscheinen mag, als ob Elon Musk und Co. mit seinen Tweets
+                        einen Einfluss auf den Kurs haben, ist dies nicht der Fall.
+                    </p>
+                    <p class="left-align light">
+                        Der Bitcoin Kurs ist wie der Aktienmarkt im Allgemeinen nicht vorhersagbar und reine
+                        Spekulation. Diese Erkenntnis deckt sich auch mit unseren Erwartungen, welche wir zu Beginn
+                        dieses Projektes hatten. Wäre der Bitcoin Kurs nämlich auf irgendeine Art beeinflussbar, würde
+                        dies sofort ausgenutzt werden. Auch auf sogenannte «Krypto Experten» sollte deshalb nicht gehört
+                        werden, da auch die nicht wirklich mehr wissen als Du.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="page-footer white-text">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5>Zum Projekt</h5>
+                <p>Im Rahmen des Kurses "Informationsvisualisierung - ivis" wurde diese
+                    Seite erstellt. Das Projekt befasst sich mit dem (möglichen) Zusammenhang zwischen dem Bitcoin Kurs
+                    und Tweets zu diesem Thema. Dabei soll untersucht werden, ob und was für ein Zusammenhang zwischen
+                    diesen Grössen
+                    besteht.</p>
+            </div>
+            <div class="col l6 s12">
+                <h5>Verwendete Daten</h5>
+                <ul>
+                    <li><a class="white-text" href="https://www.kaggle.com/datasets/kaushiksuresh147/bitcoin-tweets">Bitcoin
+                        Tweets</a></li>
+                    <li><a class="white-text" href="https://de.finance.yahoo.com/quote/BTC-EUR/history?p=BTC-EUR">Bitcoin
+                        Kurs</a></li>
+                    <li><a class="white-text"
+                           href="https://www.analyticsvidhya.com/blog/2021/06/vader-for-sentiment-analysis/">NLP
+                        Methode</a></li>
+                </ul>
+            </div>
+            <div class="col l6 s12">
+                <h5>Repository</h5>
+                <a href="https://gitlab.fhnw.ch/jan.waelti/ivis_project_janwaelti_marckalbermatter"> <i class="fa fa-gitlab fa-2x"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2022 IVIS FS22 6iCa - <a class="white-text" href="https://github.com/janwaelti98">Jan Wälti</a> und <a
+                class="white-text" href="">Marc Kalbermatter</a>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/init.js"></script>
+<script src="js/materialize.js"></script>
+<!-- D3.js -->
+<script src='lib/d3/d3.js'></script>
+<script src='lib/lodash.js'></script>
+
+<!-- visualizations -->
+<script src='src/linePlotBitcoinPrice.js'></script>
+<script src='src/bubblePlotHashtags.js'></script>
+<script src='src/bubblePlotLegend.js'></script>
+<script src='src/barPlotTopTweeters.js'></script>
+<script src='src/scatterPlotSentiment.js'></script>
+<script src='src/sentimentBarometer.js'></script>
+
+</body>
+</html>

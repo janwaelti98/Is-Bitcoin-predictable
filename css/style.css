@@ -1,0 +1,215 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+nav ul a,
+nav .brand-logo {
+    color: #444;
+}
+
+p {
+    line-height: 2rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+body {
+    background-color: rgb(33, 38, 38);
+}
+
+.parallax-container {
+    min-height: 380px;
+    line-height: 0;
+    height: auto;
+    color: rgb(33, 38, 38)
+}
+
+.parallax-container .section {
+    width: 100%;
+}
+
+.icon-block {
+    padding: 0 15px;
+}
+
+.icon-block .material-icons {
+    font-size: inherit;
+}
+
+footer.page-footer {
+    margin: 0;
+    background-color: rgb(34, 38, 38)
+}
+
+@media (min-width: 993px) {
+    #bubble_plot_hashtags_row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+#introduction_section {
+    background-color: #333333
+}
+
+#bubble_plot_hashtags_section {
+    background-color: rgb(242, 230, 194)
+}
+
+#line_plot_bitcoin_price_section {
+    background-color: rgb(0, 33, 33);
+}
+
+#line_plot_sentiment_section {
+    background-color: rgb(0, 33, 33);
+}
+
+#bar_plot_top_tweeters_section {
+    background-color: rgb(33, 33, 33)
+}
+
+#conclusion_section {
+    background-color: rgb(0, 63, 63);
+}
+
+#inputFieldContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#inputFieldFrom, #inputFieldTo {
+    margin: 0 2em
+}
+
+#amount_of_follower_row {
+    margin-bottom: 3em;
+}
+
+.input-field{
+    width: 100px
+}
+
+strong {
+    font-weight: bold;
+}
+
+h5 u {
+    text-decoration: none;
+}
+
+h5 {
+    margin-top: 4ch;
+}
+
+#index-banner {
+    min-height: 100vh;
+}
+
+.tooltip {
+    position: absolute;
+    pointer-events: none;
+}
+
+.scroll-further {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 30px;
+}
+
+.bounce {
+    display: inline-block;
+    position: relative;
+    -moz-animation: bounce 0.5s infinite linear;
+    -o-animation: bounce 0.5s infinite linear;
+    -webkit-animation: bounce 0.5s infinite linear;
+    animation: bounce 0.5s infinite linear;
+    margin-top: 10px;
+}
+
+@-webkit-keyframes bounce {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: -0.2em;
+    }
+    70% {
+        top: -0.3em;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@-moz-keyframes bounce {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: -0.2em;
+    }
+    70% {
+        top: -0.3em;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@-o-keyframes bounce {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: -0.2em;
+    }
+    70% {
+        top: -0.3em;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@-ms-keyframes bounce {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: -0.2em;
+    }
+    70% {
+        top: -0.3em;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: -0.2em;
+    }
+    70% {
+        top: -0.3em;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+.header {
+    margin-top: unset;
+}
